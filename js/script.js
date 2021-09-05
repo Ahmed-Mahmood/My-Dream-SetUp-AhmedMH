@@ -13,58 +13,61 @@ var l = 0;
 
 
 // let sliderWidth = slideContainer.offsetWidth;
-let sliderWidth =slideContainer.scrollWidth - slideContainer.clientWidth;;
-let cardWidth = productCards[0].offsetWidth
-console.log(sliderWidth);
-console.log(cardWidth);
-
-
-let value = 0;
-
-
-
-function updateDom(arr) {
-  productsSlide.innerHTML =''
-  arr.forEach((card) => {productsSlide.append(card)});
-}
-
+let sliderWidth =slideContainer.scrollWidth - slideContainer.clientWidth;
+let cardWidth = productCards[0].offsetWidth;
 let f =  sliderWidth/(5);
 let sc = sliderWidth/(5);
 
+// console.log(sliderWidth);
+// console.log(cardWidth);
+
+function updateValues () {
+   sliderWidth =slideContainer.scrollWidth - slideContainer.clientWidth;
+}
+
+function updateDom(arr) {
+  productsSlide.innerHTML ='';
+  arr.forEach((card) => {productsSlide.append(card)});
+  f =  sliderWidth/(5);
+
+}
+
+
 function moveLeft(S){
+  updateValues();
   sc <= 0 ? sc=sliderWidth : sc -= f;
-  console.log(slideContainer.scrollLeft)
+  // console.log(slideContainer.scrollLeft)
   slideContainer.scroll(sc,0)
 
 }
 
 
-function moveRight(S){
+function moveRight(){
+  updateValues();
   slideContainer.scroll(sc,0)
   sc >= sliderWidth ? sc=0 : sc += f;
-  console.log(sliderWidth,cardWidth,value);
-  console.log(sc);
-  productsSlide.style.transform = `translateX(-${value}px)`;
+  // console.log(sliderWidth,cardWidth);
+  // console.log(sc);
     clearInterval(start)
   start = setInterval(()=>{
-    moveRight(value)
+    moveRight()
   },3000);
 }
 
 let start = setInterval(()=>{
-  moveRight(value);
+  moveRight();
 },3000);
 
 
 
 right.addEventListener('click',() => {
   // clearInterval(start)
-  moveRight(value);
+  moveRight();
 });
 
 left.addEventListener('click',() => {
   // clearInterval(start)
-  moveLeft(value);
+  moveLeft();
 });
 
 
@@ -76,7 +79,7 @@ navBtns.forEach((btn) => {
     navBtns.forEach((btn) =>{
         btn.classList.remove('act');
     });
-    console.log(btn);
+    // console.log(btn);
     btn.classList.add('act');
 
   });
