@@ -23,12 +23,13 @@ let sc = sliderWidth/(5);
 
 function updateValues () {
    sliderWidth =slideContainer.scrollWidth - slideContainer.clientWidth;
+     f =  sliderWidth/(5);
+
 }
 
 function updateDom(arr) {
   productsSlide.innerHTML ='';
   arr.forEach((card) => {productsSlide.append(card)});
-  f =  sliderWidth/(5);
 
 }
 
