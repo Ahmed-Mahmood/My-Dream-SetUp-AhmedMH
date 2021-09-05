@@ -1,0 +1,172 @@
+@font-face {
+  font-family:proxon;
+  src: url('font/PROXON/PROXON.ttf');
+}
+
+@font-face {
+  font-family:techead;
+  src: url('font/techead/Techead.otf');
+}
+@font-face {
+  font-family:techeadbold;
+  src: url('font/techead/TecheadBold.otf');
+}
+@font-face {
+  font-family:techeadlight;
+  src: url('font/techead/TecheadLight.otf');
+}
+
+
+:root{
+  --one:#4bc3b5;
+  --two:#df2c45;
+  /* --www:#ff5413; */
+  --three: #693880;
+  --four:#d175b7;
+  --five:#c0c3d3;
+  --six:#dfb63a;
+  --seven:#2d231b;
+  --eight:#251841;
+  /* --ten:#1c2c54; */
+  --nine:#202f46;
+}
+
+
+html{
+  font-size: 16px;
+  scroll-behavior: smooth;
+
+}
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  overflow-x: hidden;
+  background: var(--eight);
+}
+
+.container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+
+#nav{
+  position: sticky;
+  top: 0;
+  left: 0;
+  display: grid;
+  justify-content: space-between;
+  -ms-align-items: center;
+  align-items: center;
+  background: var(--two);
+  color: #fff;
+  width: 100vw;
+  height: 4rem ;
+  padding: 0 3rem;
+  grid-template-columns: 1fr auto;
+  box-shadow: 0px 0px 10px 4px #000000a8;
+  z-index: 1001;
+}
+
+#nav-container{
+  height: 100%;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+
+
+#logo ,
+#pio-heading {
+  text-transform: uppercase;
+  font-family: proxon;
+  font-size: 2rem;
+  margin-right: .5rem;
+  letter-spacing: .3rem;
+}
+
+a {
+  text-decoration: none;
+  text-transform: capitalize;
+  font-family: proxon;
+}
+
+.nav-link {
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 0 .8rem;
+  height: 100%;
+  border-bottom: 0 solid var(--two);
+  align-self: center;
+  flex-wrap: nowrap;
+  transition: background .5s ease, color .5s ease, border-bottom .5s ease;
+}
+
+.nav-link:hover{
+    background: #fff;
+    color: var(--two);
+    border-bottom: 12px solid var(--two);
+}
+
+
+
+
+
+.pro-info {
+  width: 100%;
+  height: 8rem;
+  align-self: flex-end;
+  white-space: nowrap;
+}
+
+.pro-info .product-heading{
+  font-family: proxon;
+  color: var(--two);
+  font-size: 1.2rem;
+  text-align: left;
+  margin-bottom: .5rem;
+  text-transform: capitalize;
+  letter-spacing: .2rem;
+}
+
+.spec{
+  font-family: techeadlight;
+  letter-spacing: .1rem;
+  display: block;
+  color: var(--eight);
+  margin-bottom: .3rem;
+  text-transform: capitalize;
+}
+
+.spec:last-of-type{
+  font-family: techeadbold;
+  color: var(--two);
+  margin-bottom: 0;
+}
+
+
+
+
+@media (max-width: 1040px){
+  html{
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 960px){
+  html{
+    font-size: 12px;
+  }
+}
+@media (max-width: 400px){
+  html{
+    font-size: 10px;
+  }
+}
