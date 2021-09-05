@@ -13,21 +13,13 @@ var l = 0;
 
 
 // let sliderWidth = slideContainer.offsetWidth;
-let sliderWidth =1500;
+let sliderWidth =slideContainer.scrollWidth - slideContainer.clientWidth;;
 let cardWidth = productCards[0].offsetWidth
 console.log(sliderWidth);
 console.log(cardWidth);
 
+
 let value = 0;
-
-
-
-// const tl = gsap.timeline({defaults: {duration: 0.6, ease:"power2.inOut"}});
-//
-// tl.from(".bg", {x: "-100%", opacity: 0})
-//   .from("p", {opacity: 0}, "-=0")
-//   .from("h1", {opacity: 0, y: "30px"}, "-=0.3")
-//   .from("button", {opacity: 0, y: "-40px"}, "-=0.8")
 
 
 
